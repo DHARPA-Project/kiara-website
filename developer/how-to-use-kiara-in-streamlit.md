@@ -1,5 +1,0 @@
-# How to use kiara in streamlit
-
-There's a streamlit plugin https://dharpa.org/kiara_plugin.streamlit/latest/ which I think provides some streamlit components to help rendering kiara-related things. I have no idea how to use it, or when it's useful. I think markus had an example streamlit app somewhere?
-
-Some plugins also have streamlit things in them? [like the network analysis one](https://dharpa.org/kiara_plugin.network_analysis/latest/reference/kiara_plugin/network_analysis/streamlit/components/__init__/)

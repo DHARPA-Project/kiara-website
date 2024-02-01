@@ -4,7 +4,7 @@ For now, this repo is collecting and structuring the documentation required for 
 
 [View existing published documentation here](https://dharpa.org/kiara.documentation/latest/)
 
-See [`index.md`](./index.md) for a proposed vague structure and entrypoint.
+See [`src/content/docs/index.md`](./index) for a proposed vague structure and entrypoint.
 
 ## Disclaimer
 

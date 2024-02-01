@@ -1,3 +1,0 @@
-# How to share a pipeline
-
-[basically this](https://dharpa.org/kiara.documentation/latest/extending_kiara/pipelines/assemble_pipelines/#including-the-pipeline-in-a-kiara-plugin), maybe also [this](https://dharpa.org/kiara.documentation/latest/extending_kiara/pipelines/assemble_pipelines/#making-the-pipeline-discoverable)

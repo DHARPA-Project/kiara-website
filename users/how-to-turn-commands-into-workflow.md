@@ -1,7 +1,0 @@
-# How to go from manual commands to a kiara workflow
-
-or indeed from jupyter to a workflow?
-
-link to what's a workflow, briefly summarise when/why you'd want to do this.
-
-[This is basically the steps to follow on from the NLP getting started?](https://dharpa.org/kiara.documentation/latest/workflows/topic_modeling/)

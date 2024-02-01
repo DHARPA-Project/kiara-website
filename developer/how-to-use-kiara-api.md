@@ -1,5 +1,0 @@
-# How to use the kiara API
-
-there's an api, with an openapi spec. You can run it, and call it from other processes and get results? This comes from [kiara_plugin.service](https://github.com/DHARPA-Project/kiara_plugin.service)?
-
-when should you use the API vs CLI vs importing kiara into python code in jupyter or streamlit or your own script? (is this also a seperate concept thing?)

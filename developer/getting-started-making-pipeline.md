@@ -1,7 +1,0 @@
-# Creating a kiara pipeline
-
-[basically this](https://dharpa.org/kiara.documentation/latest/extending_kiara/pipelines/assemble_pipelines)
-
-What's a pipeline (briefly), why would I make one? What does this tutorial's pipeline do?
-
-Link to next steps like sharing pipeline with others

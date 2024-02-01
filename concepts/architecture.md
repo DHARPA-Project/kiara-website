@@ -1,7 +1,0 @@
-# Kiara architecture and design
-
-> there's some info [here in the kiara core docs](https://dharpa.org/kiara/latest/design_docs/) ([on github](https://github.com/DHARPA-Project/kiara/tree/develop/docs/design_docs)), but as they say, they aren't entirely up to date. I think this page/section probably wants to include most of that information.
-
-> this section probably should be driven by markus, with the rest of the team asking clarifying questions?
-
-> Maybe different separate pages are useful too, addressing the concepts behind the kiara data store, the idea of workflows

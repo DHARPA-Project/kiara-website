@@ -1,3 +1,0 @@
-# Getting started - natural language processing
-
-[basically this tutorial](https://dharpa.org/kiara.documentation/latest/workshop/Topic_Modelling/), but be more explicit at the start and end what you will/have achieved - gone from some text files to some topics, including all the annoying preprocessing steps like removing stopwords, tokenizing?

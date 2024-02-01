@@ -1,5 +1,0 @@
-## How to run a pipeline
-
-> I guess this is really simple, but would be good to summarise the required steps in case someone's been sent a pipeline file? Explain that the pipeline file tells you what inputs/arguments you need to give it
-
-definitely mention the draw the pipeline graph command, to get an idea for what the thing does
