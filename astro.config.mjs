@@ -22,16 +22,30 @@ export default defineConfig({
           },
         },
         {
-          label: "Researcher",
+          label: "Mini-apps",
+          collapsed: true,
           autogenerate: {
-            directory: "users",
+            directory: "mini-app-users",
           },
         },
         {
-          label: "Developer",
+          label: "Module users",
+          autogenerate: {
+            directory: "module-users",
+          },
+        },
+        {
+          label: "Module writers",
           collapsed: true,
           autogenerate: {
-            directory: "developer",
+            directory: "module-writers",
+          },
+        },
+        {
+          label: "Developing kiara itself",
+          collapsed: true,
+          autogenerate: {
+            directory: "core-devs",
           },
         },
         {

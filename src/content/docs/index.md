@@ -6,7 +6,7 @@ hero:
   tagline: Docs for kiara and associated plugins
   actions:
     - text: Getting Started
-      link: /users/getting-started-network-analysis/
+      link: /module-users/getting-started-network-analysis/
       icon: right-arrow
       variant: primary
     - text: Glossary
@@ -46,18 +46,20 @@ A possible information architecture for a new docs site for kiara could look lik
 
 - Overview/summary/homepage [draft and ideas](./overview)
 
-- I'm a [researcher](./users/index)
+- I'm a [module user](./module-user/index)
 
   - Tutorials/getting started - for [network analysis folks](/users/getting-started-network-analysis) and [NLP folks](/users/getting-started-nlp)
   - how-to specific things - some ideas in `/users/how-to-<something>.md`
   - [how to install python](./users/how-to-install-python)
 
-- I'm a developer/plugin author
+- I'm a [plugin author](./module-writers/index)
 
   - Tutorials/getting started [making a plugin](./developer/getting-started-making-plugin) and [making a pipeline](./developer/getting-started-making-pipeline)
   - how-to specific things - some ideas in `/developer/how-to-<something>.md`
   - something about developing on kiara core
 
+- I use kiara via [mini apps](./mini-app-users/index)
+- I [develop kiara itself](./core-devs/index)
 - Concepts
 
   - [Glossary/explanation of terms](./concepts/glossary)
