@@ -22,7 +22,7 @@ export default defineConfig({
           },
         },
         {
-          label: "Mini-apps",
+          label: "Mini-app users",
           collapsed: true,
           autogenerate: {
             directory: "mini-app-users",
