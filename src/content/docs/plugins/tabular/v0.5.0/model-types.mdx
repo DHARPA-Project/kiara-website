@@ -1,0 +1,14 @@
+---
+title: Kiara Model Types
+---
+
+import data from "@assets/plugins/tabular/kiara_plugin.tabular-v0.5.0.json";
+import {
+  Doc,
+  ItemMetadata,
+} from "@dharpa/kiara-svelte-components";
+
+{Object.values(data.kiara_model_types.item_infos).map(o => <section><h2>{o.type_name}</h2>		<Doc doc={o.documentation} />
+	<ItemMetadata item={o} />
+</section>)}
+

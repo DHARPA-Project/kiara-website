@@ -1,0 +1,23 @@
+---
+title: Module types
+sidebar:
+  order: 2
+---
+
+import data from "@assets/plugins/tabular/kiara_plugin.tabular-v0.5.0.json";
+import { Code } from '@astrojs/starlight/components';
+import {
+  Doc,
+  ItemMetadata,
+  ModuleConfig,Foldable
+} from "@dharpa/kiara-svelte-components";
+
+{Object.values(data.module_types.item_infos).map(o => <section><h2 id={o.type_name}>{o.type_name}</h2>	<Doc doc={o.documentation} />
+	<ItemMetadata item={o} />
+	<p>Configuration class: <code>{o.module_config.python_class.full_name}</code></p>
+	<ModuleConfig config_values={o.module_config.config_values} />
+	<Foldable title="Module source code"  client:visible="svelte">
+		<Code code={o.module_src} language="python" ></Code>
+	</Foldable>
+</section>)}
+

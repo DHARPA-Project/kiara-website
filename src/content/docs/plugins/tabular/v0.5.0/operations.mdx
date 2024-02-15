@@ -1,0 +1,27 @@
+---
+title: Operations
+sidebar: 
+  order: 1
+---
+
+import data from "@assets/plugins/tabular/kiara_plugin.tabular-v0.5.0.json";
+import {
+  Doc,
+  InputsOutputs,
+  ItemMetadata,
+} from "@dharpa/kiara-svelte-components";
+
+{Object.values(data.operations.item_infos).map(o => <section><h2 id={o.type_name}>{o.type_name}</h2><Doc doc={o.documentation}/>
+<ItemMetadata item={o} />
+	<h3>Inputs</h3>
+	<InputsOutputs fields={o.input_fields} />
+	<h3>Outputs</h3>
+	<InputsOutputs fields={o.output_fields} />
+<p>
+			Module <a
+				href={`/plugins/tabular/050/module-types#${o.operation.module_type}`}
+				data-pagefind-filter="Module">{o.operation.module_type}</a
+			>
+		</p>
+</section>)}
+

@@ -1,0 +1,31 @@
+---
+title: Data Types
+---
+
+import data from "@assets/plugins/tabular/kiara_plugin.tabular-v0.5.0.json";
+import {
+  Doc,
+  ItemMetadata,
+  Foldable
+} from "@dharpa/kiara-svelte-components";
+
+{Object.values(data.data_types.item_infos).map(o => <section><h2>{o.type_name}</h2>		<Doc doc={o.documentation} />
+	<ItemMetadata item={o} />
+	<Foldable title="Implementation details" client:visible="svelte">
+		<dl>
+			<dt >Python class</dt>
+			<dd>
+				<code>{o.python_class.full_name}</code>
+			</dd>
+			<dt >Value class</dt>
+			<dd><code>{o.value_cls.full_name}</code></dd>
+			<dt>Config class</dt>
+			<dd><code>{o.data_type_config_cls.full_name}</code></dd>
+			{o.lineage != null &&
+			<>	<dt>Lineage</dt>
+				<dd><code>{o.lineage.join(' → ')}</code></dd>
+      </>}
+		</dl>
+	</Foldable>
+</section>)}
+
