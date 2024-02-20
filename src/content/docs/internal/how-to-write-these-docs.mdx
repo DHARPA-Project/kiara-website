@@ -1,0 +1,180 @@
+---
+title: How to work on these docs
+---
+The platform for these docs is maintained by Caro Appleby, grab me on GitHub (`@caro401`) or the team Slack for any feedback or questions. 
+
+The platform is based on [Starlight](https://starlight.astro.build/), which itself is based on [Astro](https://astro.build/), which is a fancy static site generator (for our usecase at least). It turns [Markdown](https://daringfireball.net/projects/markdown/basics) or [MDX](https://mdxjs.com/docs/what-is-mdx/#mdx-syntax) or [Markdoc](https://markdoc.dev/docs/syntax) content into HTML, which can then be viewed via a web browser.
+
+There's also a Content Management System (CMS) available for people on the team to use. This is based on [Keystatic](https://keystatic.com/), and can be accessed at [`/keystatic`](https://kiara-website.pages.dev/keystatic) if you have write access to this repository on GitHub.
+
+Everything that ends up in the `main` branch in GitHub will automatically end up in the live site (here!) after a few minutes, unless something goes wrong. Commits to other branches will also get deployed, but to different "preview" URLS.
+
+I'll call this whole system the "docs platform". There's a label `docs-platform` for it in GitHub if you make an issue about the platform or how to use it.
+
+## Ways to add or edit content
+
+There's a bunch of different ways you can add or edit content in the docs, depending on how big the changes are you want to make, and how technically comfortable you feel. 
+
+### I just want to fix a typo
+
+Find the page on the website you want to edit, and click the "edit page" link at the bottom. This will take you straight to the right file to edit in GitHub. Make the change, then click the green "Commit changes..." button in the top corner and follow the prompts. If the change is super tiny, commit straight to the `main` branch. Wait for a minute or two (and check that the [build succeeds](#when-things-go-wrong)) and your change should be live on the site.
+
+### I want to make bigger edits to text
+
+If you can, draft the changes you want to write in a Google doc or some other text editor first. 
+
+Go to [the CMS](https://kiara-website.pages.dev/keystatic) (if you have access) and find the appopriate collection for your page. This loosely matches up with the main sidebar sections, and with our target user personas. Find the page you want to work on by its "slug" - probably the same as the title but with `-` not spaces. Paste in or make your edits in the big text box for that page, then hit the blue "Save" button in the top corner. 
+
+Hitting "save" makes a commit in GitHub, which triggers a site rebuild each time you do it, so ideally only save when you have a meaningful chunk of work completed. Your browser will remember what you were working on if you accidentally navigate away, you don't have to save after every sentence.
+
+Also use this process if you want to add a new page, when you've already drafted the content elsewhere and it's mostly text.
+
+### I want to add a new, complicated page 
+
+For these purposes, a complicated page is one with a lot of code samples, requiring special components or extra markdown things that the CMS doesn't support well. I'm assuming that you know the basics of how to use `git` to clone a repository, make a branch, commit and pull request, can run commands in your terminal, and can (work out how to) write markdown syntax in your text editor of choice.
+
+It's much easier to write big chunks of documentation if you can run a copy of the site on your local computer, so you can look at the changes you're making as you're working. [Follow these instructions to get set up](#running-this-site-on-your-own-computer). Then, work out where your file is/should go. You'll want to look in the `/src/content/docs` directory to start with, then find the section that matches with where your doc should go (eg `concepts`). 
+
+Create a new file where you want your new doc to appear. If you want to be able to edit it in the CMS in the future, use Markdoc format (`.mdoc`), otherwise use MDX format for maximum flexibility (`.mdx`). The first thing you'll need to do in a new file is add the required [frontmatter](https://starlight.astro.build/guides/authoring-content/#frontmatter). This means adding a special section at the start of your file, which looks like:
+
+```md
+---
+title: Title for your new page
+---
+
+Whatever you actually want to write goes here below the ---. 
+You can copy this code snippet straight into your new page with the 
+copy button in the top right corner.
+```
+
+You can add all sorts of things to the frontmatter (see [Starlight's docs on what's allowed](https://starlight.astro.build/reference/frontmatter/)), but the `title` is required.
+
+You'll need to write your content using markdown syntax directly - [here's a quick primer on how to do that](https://www.markdownguide.org/cheat-sheet/). Starlight also provides a couple extra neat things that might be useful (if you're in a `.md` or `.mdx` file, not a `.mdoc` one yet). One is  [asides](https://starlight.astro.build/guides/authoring-content/#asides) for things you want to draw extra attention to:
+
+:::tip
+Here's an example of an aside. They might be useful for warning people about particular tricky things or common mistakes
+:::
+
+The other is [extra fancy things with code blocks](https://starlight.astro.build/guides/authoring-content/#expressive-code-features) using the [Expressive Code](https://expressive-code.com/) library. This can be really powerful for highligting particular lines or diffs in your code samples, making it clear whether you're showing code to write in a file or run in a terminal. Read their docs or ask for help on how to do this. 
+
+When you're done making changes, check that the site will (probably) build with 
+```bash title="Tidy up and build the site"
+# optionally run the formatter to tidy up your code
+npm run format
+# build the site ready for deployment
+npm run build
+```
+
+This will probably give you a lot of output that you don't care about (because there's a lot of pages!), just check that the final like of output says `Complete!` rather than an error message or stack trace. See [when things go wrong](#when-things-go-wrong) for ideas about how to fix error if there are any.
+
+
+Once you're happy, make a git commit (probably to a new branch), push it and open a pull request to get review on what you've written. 
+
+:::note
+I understand this whole process is a bit complicated (sorry!). Feel free to ask me for help at any point with anything, or to suggest improvements to these docs about how to use the platform, or to the platform itself.
+:::
+
+
+### I need to add a new version of a plugin
+
+This site should only include docs for plugins that we think are stable and good quality. If that isn't the case, your plugin should be able to make a standalone version of its own docs to use until it's considered stable enough to include here.
+
+I'll use `kiara_plugin.core_types` as an example here, replace with the name of your plugin as appropriate. This process is a bit manual at the moment, but hopefully shouldn't be super common. If this changes, or I have spare time, I'll automate it. 
+
+At a high level, the key thing that needs to happen is a JSON file with a specific filename and in a specific format needs to end up in a specific place in this repository, then the docs platform should take care of everything else. The filename needs to be in the precise format `kiara_plugin.PLUGIN_NAME-vX.Y.Z.json`, where `PLUGIN_NAME` is something like `core_types` or `tabular`, and `X.Y.Z` is the version number, and it needs to be in the `src/content/plugins/PLUGIN_NAME` directory.
+
+Generate this file with a command something like `kiara info plugin explain kiara_plugin.core_types --format json > ./kiara_plugin.core_types-v0.5.0.json`, when `core_types` is the plugin you care about, and `v0.5.0` is both the version you care about, and the version listed when running `kiara --version`. I'll leave it up to you to set up a working kiara install with the plugin version you care about, whether that's using `conda` or a virtual environment or `pixi` or whatever. 
+
+Move the file you generated to the required place, either in a cloned copy of this site then git commit and push, or by uploading directly to GitHub, making extra sure the filename and location is correct (there's no reliable automated checks for this yet, it will probably just silently fail). 
+
+## Running this site on your own computer
+
+You only need to care about this if you particularly want to make a lot of changes to a lot of docs all at once (and only then to save you a bit of time), or preview how complicated pages are going to look. Don't worry about this section at all if that's not something you need to do. 
+
+I'm assuming that you know the basics of how to use `git` to clone a repository, make a branch, commit and pull request, can run commands in your terminal, and can follow installation instructions for your own operating system for common tools.
+
+The first thing to do is clone this repository to your machine, which will look something like this:
+
+```bash title="Clone this repository"
+git clone git@github.com:DHARPA-Project/kiara-website.git
+cd kiara-website
+```
+
+Next, we'll need to install a JavaScript runtime to be able to run and build the site. Don't worry, you don't actually have to write any JavaScript! Go to [Nodejs.org](https://nodejs.org/en) and download the "LTS" version (labelled "recommended for most users"). Once you've done that, check it worked by running the following:
+
+```bash title="Check your node version"
+node --version  
+# should be something like v20.11.0, must be >18
+npm --version
+# should be something like 10.2.3
+```
+
+Node is sort of equivalent to Python, or more properly CPython. NPM is Node's package manager, sort of like `pip` or `conda` for Python. Unlike Python, Node doesn't have a concept of virtual environments that you need to manage yourself, you can dive straight in.
+
+Now we can install the dependencies for the docs platform with:
+```bash title="Install the dependencies"
+npm install
+```
+
+And if everything's worked, you should be able to start the "dev server" to view a preview of the site in your browser. Run:
+
+```bash title="Start the dev server"
+npm run dev
+```
+
+then open the URL it tells you in your browser, probably [http://127.0.0.1:4321](http://127.0.0.1:4321). The dev server will intelligently refresh the pages or content it's serving when you make changes to files in the repository, so you can preview anything you're working on really fast. 
+
+Search doesn't work while running the dev server. If you need to experiment with how search works, you'll need to `npm run build`, then serve the `/dist` directory using the server of your choice (I run `npx serve dist`). This doesn't magically refresh itself, so you'll need to rebuild and restart the server each time you make a change.
+
+### Site structure
+
+The site is structured like this (omitting bits I don't think you'll need to touch):
+
+```plaintext
+src
+├── content
+│   ├── docs
+│   │   ├── ...
+│   │   ├── index.md  ← this is the site homepage
+│   │   ├── ...
+│   │   ├── module-users ← these sections all accessible in the CMS
+│   │   │   ├── <lots of other pages here>
+│   │   │   ├── something.mdoc  ← a specific page
+│   │   │   └── index.mdoc  ← this page will always appear first in that sidebar section
+│   │   └── plugins  ← be a bit careful in here
+│   │       ├── ...
+│   │       ├── index.mdx  ← about plugins in general
+│   │       └── tabular
+│   │           └── index.mdx  ← authored content about this plugin
+│   └── plugins
+│       └── <JSON files of plugin docs here>
+├── pages
+│   └── <autogenerated plugin docs come from here>
+└── styles
+```
+
+Mostly you'll interact with files in `src/content/docs/`, as this is where most of the hand-authored content lives (as opposed to autogenerated things or configuration files). The directories inside there correspond to the sections you see in the left sidebar of the site, and to our user personas. 
+
+There's also the `src/content/plugins` collection, which is where the autogenerated plugin documentation data starts out, exported directly from `kiara`. The `src/pages` section deals with turning that raw data into nice pages, which appear in the sidebar under "Plugins → Some plugin name → v0.something"
+
+`astro.config.mjs` contains the configuration for the sidebar, in case you need to tweak that (but prefer to do it at a page level via [frontmatter](https://starlight.astro.build/reference/frontmatter/#sidebar) if you can). 
+
+
+
+## When things go wrong
+
+Sometimes things go wrong, this is completely fine. You can't publish a broken site - there's a "build step" between you pushing code to GitHub on the `main` branch and the changes going live which prevents broken code making it onto the live site. If you notice that changes you just made aren't showing up in the live site after a minute or two, this might be the problem. You can see whether your build was successful by looking for a green checkmark ✅ or red x ❌ in GitHub, usually next to a commit ID or a summary of the last thing you did. If you click on that icon, GitHub will tell you more about what happened.
+
+If you get a red x, there's a few common things that might have gone wrong. Most likely, you forgot to add the frontmatter to a new page. If you know how to [run the site locally](#running-this-site-on-your-own-computer), you can check this by going to the page(s) you changed in your browser while running the dev server. When you go to that page, the browser and your terminal where the dev server is running will tell you something like this:
+
+```shellsession wrap=true
+[ERROR] [InvalidContentEntryFrontmatterError] 
+docs → internal/how-to-write-these-docs.mdx   # the path of the file where the frontmatter is wrong
+frontmatter does not match collection schema.
+title: Required  # what key in the frontmatter you got wrong
+```
+
+Grab the [frontmatter example code from above](#i-want-to-add-a-new-complicated-page) and add that to your page, checking there's no blank lines or spaces before the first `---`.
+
+If this doesn't fix things, ping Caro (`@caro401` on GitHub). For the moment (because of how and where the site is currently deployed), you can't get any better diagonstics than "something failed", but this should be improved in the future. 
+
