@@ -1,0 +1,29 @@
+---
+import {
+  getStaticPathsForDatatype,
+  getSpecificKiaraTypeInstance,
+} from "@lib/util";
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { Doc, ItemMetadata } from "@dharpa/kiara-svelte-components";
+
+export async function getStaticPaths() {
+  return await getStaticPathsForDatatype("kiara_model_types", "modeltype");
+}
+
+const { plugin, version, modeltype } = Astro.params;
+const data = await getSpecificKiaraTypeInstance(
+  plugin,
+  version,
+  "kiara_model_types",
+  modeltype,
+);
+---
+
+<StarlightPage
+  frontmatter={{
+    title: `Kiara model type ${data.type_name} in plugin ${plugin} ${version}`,
+  }}
+>
+  <Doc doc={data.documentation} />
+  <ItemMetadata item={data} />
+</StarlightPage>

@@ -1,0 +1,51 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { Tabs, TabItem, Code } from "@astrojs/starlight/components";
+import {
+  Doc,
+  ItemMetadata,
+  ModuleConfig,
+} from "@dharpa/kiara-svelte-components";
+import {
+  getStaticPathsForDatatype,
+  getSpecificKiaraTypeInstance,
+} from "@lib/util";
+
+export async function getStaticPaths() {
+  return await getStaticPathsForDatatype("module_types", "module");
+}
+
+const { plugin, version, module } = Astro.params;
+const data = await getSpecificKiaraTypeInstance(
+  plugin,
+  version,
+  "module_types",
+  module,
+);
+---
+
+<StarlightPage
+  frontmatter={{
+    title: `Module ${data.type_name} in plugin ${plugin} ${version}`,
+  }}
+>
+  <Doc doc={data.documentation} />
+
+  <ItemMetadata item={data} />
+  <br />
+  <Tabs>
+    <TabItem label="Configuration">
+      <h2>Module configuration options</h2>
+      <p>
+        Configuration class: <code
+          >{data.module_config.python_class.full_name}</code
+        >
+      </p>
+      <ModuleConfig config_values={data.module_config.config_values} />
+    </TabItem>
+    <TabItem label="Source code">
+      <h2>Module source code</h2>
+      <Code code={data.module_src} lang="python" class="text-sm" /></TabItem
+    >
+  </Tabs>
+</StarlightPage>

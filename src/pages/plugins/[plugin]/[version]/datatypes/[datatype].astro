@@ -1,0 +1,59 @@
+---
+import {
+  getStaticPathsForDatatype,
+  getSpecificKiaraTypeInstance,
+} from "@lib/util";
+
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { Doc, ItemMetadata } from "@dharpa/kiara-svelte-components";
+
+export async function getStaticPaths() {
+  return await getStaticPathsForDatatype("data_types", "datatype");
+}
+export type Params = {
+  plugin: string;
+  version: string;
+  datatype: string;
+};
+
+const { plugin, version, datatype } = Astro.params;
+const data = await getSpecificKiaraTypeInstance(
+  plugin,
+  version,
+  "data_types",
+  datatype,
+);
+
+// TODO the implementation details here should probably be moved to a component in @dharpa/kiara-svelte-components
+---
+
+<StarlightPage
+  frontmatter={{
+    title: `Data type ${data.type_name} in plugin ${plugin} ${version}`,
+  }}
+>
+  <Doc doc={data.documentation} />
+  <ItemMetadata item={data} />
+
+  <h2>Implementation details</h2>
+  <dl class="text-sm">
+    <dt class="font-bold">Python class</dt>
+    <dd>
+      <code>{data.python_class.full_name}</code>
+    </dd>
+    <dt class="font-bold">Value class</dt>
+    <dd><code>{data.value_cls.full_name}</code></dd>
+    <dt class="font-bold">Config class</dt>
+    <dd><code>{data.data_type_config_cls.full_name}</code></dd>
+    {
+      data.lineage && (
+        <>
+          <dt class="font-bold">Lineage</dt>
+          <dd>
+            <code>{data.lineage.join(" → ")}</code>
+          </dd>
+        </>
+      )
+    }
+  </dl>
+</StarlightPage>

@@ -23,14 +23,12 @@
         "desc": "The url for the module package documentation."
       }
     },
-    "tags": [
-      "tabular"
-    ],
+    "tags": ["tabular"],
     "labels": {
       "package": "kiara_plugin.tabular"
     }
   },
-  "version": "0.5.2",
+  "version": "0.5.0",
   "data_types": {
     "group_title": null,
     "item_infos": {
@@ -59,9 +57,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -81,10 +77,7 @@
           "python_module_name": "kiara.data_types",
           "full_name": "kiara.data_types.DataTypeConfig"
         },
-        "lineage": [
-          "array",
-          "any"
-        ],
+        "lineage": ["array", "any"],
         "qualifier_profiles": {}
       },
       "database": {
@@ -112,9 +105,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -134,10 +125,7 @@
           "python_module_name": "kiara.data_types",
           "full_name": "kiara.data_types.DataTypeConfig"
         },
-        "lineage": [
-          "database",
-          "any"
-        ],
+        "lineage": ["database", "any"],
         "qualifier_profiles": {}
       },
       "table": {
@@ -165,9 +153,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -187,10 +173,7 @@
           "python_module_name": "kiara.data_types",
           "full_name": "kiara.data_types.DataTypeConfig"
         },
-        "lineage": [
-          "table",
-          "any"
-        ],
+        "lineage": ["table", "any"],
         "qualifier_profiles": {}
       },
       "tables": {
@@ -218,9 +201,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -240,10 +221,7 @@
           "python_module_name": "kiara.data_types",
           "full_name": "kiara.data_types.DataTypeConfig"
         },
-        "lineage": [
-          "tables",
-          "any"
-        ],
+        "lineage": ["tables", "any"],
         "qualifier_profiles": {}
       }
     },
@@ -277,9 +255,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -343,9 +319,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -415,9 +389,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -487,9 +459,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -559,9 +529,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -631,9 +599,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -703,9 +669,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -781,9 +745,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -859,9 +821,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -937,9 +897,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1015,9 +973,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1066,13 +1022,13 @@
             },
             "min_index": {
               "description": "The minimum index from where to start parsing the string(s).",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'type': 'integer'}, {'type': 'null'}]",
               "value_default": null,
               "required": false
             },
             "max_index": {
               "description": "The maximum index until whic to parse the string(s).",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'type': 'integer'}, {'type': 'null'}]",
               "value_default": null,
               "required": false
             },
@@ -1111,9 +1067,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1168,7 +1122,7 @@
             },
             "include_source_metadata": {
               "description": "Whether to include a table with metadata about the source files.",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'type': 'boolean'}, {'type': 'null'}]",
               "value_default": null,
               "required": false
             },
@@ -1185,7 +1139,7 @@
       "create.table": {
         "type_name": "create.table",
         "documentation": {
-          "description": "Create a table from supported source input types.",
+          "description": "-- n/a --",
           "doc": null
         },
         "authors": {
@@ -1207,9 +1161,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1258,7 +1210,7 @@
             }
           }
         },
-        "module_src": "class CreateTableModule(CreateFromModule):\n    \"\"\"Create a table from supported source input types.\"\"\"\n\n    _module_type_name = \"create.table\"\n    _config_cls = CreateTableModuleConfig\n\n    def create_optional_inputs(\n        self, source_type: str, target_type\n    ) -> Union[Mapping[str, Mapping[str, Any]], None]:\n\n        if source_type == \"file\":\n            return {\n                \"first_row_is_header\": {\n                    \"type\": \"boolean\",\n                    \"optional\": True,\n                    \"doc\": \"Whether the first row of a (csv) file is a header row. If not provided, kiara will try to auto-determine. Ignored if not a csv file.\",\n                }\n            }\n\n        return None\n\n    def create__table__from__file(self, source_value: Value, optional: ValueMap) -> Any:\n        \"\"\"Create a table from a file, trying to auto-determine the format of said file.\n\n        Currently supported input file types:\n\n        - csv\n        - parquet\n        \"\"\"\n\n        input_file: KiaraFile = source_value.data\n\n        if input_file.file_name.endswith(\".csv\"):\n            return self.import_csv_file(source_value, optional)\n        elif input_file.file_name.endswith(\".parquet\"):\n            return self.import_parquet_file(source_value, optional)\n\n    def import_parquet_file(\n        self, source_value: Value, optional: ValueMap\n    ) -> KiaraTable:\n        \"\"\"Create a table from a parquet file value.\"\"\"\n\n        import pyarrow.parquet as pq\n\n        # TODO: use memory mapping to optimize memory usage?\n\n        input_file: KiaraFile = source_value.data\n        imported_data = None\n        errors = []\n\n        try:\n            imported_data = pq.read_table(input_file.path)\n        except Exception as e:\n            errors.append(e)\n\n        if imported_data is None:\n            raise KiaraProcessingException(\n                f\"Failed to import parquet file '{input_file.path}'.\"\n            )\n\n        return KiaraTable.create_table(imported_data)\n\n    def import_csv_file(self, source_value: Value, optional: ValueMap) -> KiaraTable:\n        \"\"\"Create a table from a csv file value.\"\"\"\n        import csv as py_csv\n\n        from pyarrow import csv\n\n        input_file: KiaraFile = source_value.data\n        imported_data = None\n        errors = []\n\n        has_header = optional.get_value_data(\"first_row_is_header\")\n        if has_header is None:\n            try:\n                has_header = True\n                with open(input_file.path, \"rt\") as csvfile:\n                    sniffer = py_csv.Sniffer()\n                    has_header = sniffer.has_header(csvfile.read(2048))\n                    csvfile.seek(0)\n            except Exception as e:\n                # TODO: add this to the procss log\n                log_message(\n                    \"csv_sniffer.error\",\n                    file=input_file.path,\n                    error=str(e),\n                    details=\"assuming csv file has header\",\n                )\n\n        try:\n            if has_header:\n                imported_data = csv.read_csv(input_file.path)\n            else:\n                read_options = csv.ReadOptions(autogenerate_column_names=True)\n                imported_data = csv.read_csv(input_file.path, read_options=read_options)\n        except Exception as e:\n            errors.append(e)\n\n        if imported_data is None:\n            raise KiaraProcessingException(\n                f\"Failed to import csv file '{input_file.path}'.\"\n            )\n\n        # import pandas as pd\n        # df = pd.read_csv(input_file.path)\n        # imported_data = pa.Table.from_pandas(df)\n\n        return KiaraTable.create_table(imported_data)\n\n    # def create__table__from__csv_file(self, source_value: Value) -> Any:\n    #     \"\"\"Create a table from a csv_file value.\"\"\"\n    #\n    #     from pyarrow import csv\n    #\n    #     input_file: FileModel = source_value.data\n    #     imported_data = csv.read_csv(input_file.path)\n    #\n    #     # import pandas as pd\n    #     # df = pd.read_csv(input_file.path)\n    #     # imported_data = pa.Table.from_pandas(df)\n    #\n    #     return KiaraTable.create_table(imported_data)\n\n    def create__table__from__file_bundle(self, source_value: Value) -> Any:\n        \"\"\"Create a table value from a text file_bundle.\n\n        The resulting table will have (at a minimum) the following columns:\n        - id: an auto-assigned index\n        - rel_path: the relative path of the file (from the provided base path)\n        - content: the text file content\n        \"\"\"\n\n        import pyarrow as pa\n\n        bundle: KiaraFileBundle = source_value.data\n\n        columns = FILE_BUNDLE_IMPORT_AVAILABLE_COLUMNS\n\n        ignore_errors = self.get_config_value(\"ignore_errors\")\n        file_dict = bundle.read_text_file_contents(ignore_errors=ignore_errors)\n\n        # TODO: use chunks to save on memory\n        tabular: Dict[str, List[Any]] = {}\n        for column in columns:\n            for index, rel_path in enumerate(sorted(file_dict.keys())):\n\n                if column == \"content\":\n                    _value: Any = file_dict[rel_path]\n                elif column == \"id\":\n                    _value = index\n                elif column == \"rel_path\":\n                    _value = rel_path\n                else:\n                    file_model = bundle.included_files[rel_path]\n                    _value = getattr(file_model, column)\n\n                tabular.setdefault(column, []).append(_value)\n\n        table = pa.Table.from_pydict(tabular)\n        return KiaraTable.create_table(table)\n"
+        "module_src": "class CreateTableModule(CreateFromModule):\n\n    _module_type_name = \"create.table\"\n    _config_cls = CreateTableModuleConfig\n\n    def create_optional_inputs(\n        self, source_type: str, target_type\n    ) -> Union[Mapping[str, Mapping[str, Any]], None]:\n\n        if source_type == \"file\":\n            return {\n                \"first_row_is_header\": {\n                    \"type\": \"boolean\",\n                    \"optional\": True,\n                    \"doc\": \"Whether the first row of a (csv) file is a header row. If not provided, kiara will try to auto-determine. Ignored if not a csv file.\",\n                }\n            }\n\n        return None\n\n    def create__table__from__file(self, source_value: Value, optional: ValueMap) -> Any:\n        \"\"\"Create a table from a file, trying to auto-determine the format of said file.\n\n        Currently supported input file types:\n\n        - csv\n        - parquet\n        \"\"\"\n\n        input_file: KiaraFile = source_value.data\n\n        if input_file.file_name.endswith(\".csv\"):\n            return self.import_csv_file(source_value, optional)\n        elif input_file.file_name.endswith(\".parquet\"):\n            return self.import_parquet_file(source_value, optional)\n\n    def import_parquet_file(\n        self, source_value: Value, optional: ValueMap\n    ) -> KiaraTable:\n        \"\"\"Create a table from a parquet file value.\"\"\"\n\n        import pyarrow.parquet as pq\n\n        # TODO: use memory mapping to optimize memory usage?\n\n        input_file: KiaraFile = source_value.data\n        imported_data = None\n        errors = []\n\n        try:\n            imported_data = pq.read_table(input_file.path)\n        except Exception as e:\n            errors.append(e)\n\n        if imported_data is None:\n            raise KiaraProcessingException(\n                f\"Failed to import parquet file '{input_file.path}'.\"\n            )\n\n        return KiaraTable.create_table(imported_data)\n\n    def import_csv_file(self, source_value: Value, optional: ValueMap) -> KiaraTable:\n        \"\"\"Create a table from a csv file value.\"\"\"\n        import csv as py_csv\n\n        from pyarrow import csv\n\n        input_file: KiaraFile = source_value.data\n        imported_data = None\n        errors = []\n\n        has_header = optional.get_value_data(\"first_row_is_header\")\n        if has_header is None:\n            try:\n                has_header = True\n                with open(input_file.path, \"rt\") as csvfile:\n                    sniffer = py_csv.Sniffer()\n                    has_header = sniffer.has_header(csvfile.read(2048))\n                    csvfile.seek(0)\n            except Exception as e:\n                # TODO: add this to the procss log\n                log_message(\n                    \"csv_sniffer.error\",\n                    file=input_file.path,\n                    error=str(e),\n                    details=\"assuming csv file has header\",\n                )\n\n        try:\n            if has_header:\n                imported_data = csv.read_csv(input_file.path)\n            else:\n                read_options = csv.ReadOptions(autogenerate_column_names=True)\n                imported_data = csv.read_csv(input_file.path, read_options=read_options)\n        except Exception as e:\n            errors.append(e)\n\n        if imported_data is None:\n            raise KiaraProcessingException(\n                f\"Failed to import csv file '{input_file.path}'.\"\n            )\n\n        # import pandas as pd\n        # df = pd.read_csv(input_file.path)\n        # imported_data = pa.Table.from_pandas(df)\n\n        return KiaraTable.create_table(imported_data)\n\n    # def create__table__from__csv_file(self, source_value: Value) -> Any:\n    #     \"\"\"Create a table from a csv_file value.\"\"\"\n    #\n    #     from pyarrow import csv\n    #\n    #     input_file: FileModel = source_value.data\n    #     imported_data = csv.read_csv(input_file.path)\n    #\n    #     # import pandas as pd\n    #     # df = pd.read_csv(input_file.path)\n    #     # imported_data = pa.Table.from_pandas(df)\n    #\n    #     return KiaraTable.create_table(imported_data)\n\n    def create__table__from__file_bundle(self, source_value: Value) -> Any:\n        \"\"\"Create a table value from a text file_bundle.\n\n        The resulting table will have (at a minimum) the following columns:\n        - id: an auto-assigned index\n        - rel_path: the relative path of the file (from the provided base path)\n        - content: the text file content\n        \"\"\"\n\n        import pyarrow as pa\n\n        bundle: KiaraFileBundle = source_value.data\n\n        columns = FILE_BUNDLE_IMPORT_AVAILABLE_COLUMNS\n\n        ignore_errors = self.get_config_value(\"ignore_errors\")\n        file_dict = bundle.read_text_file_contents(ignore_errors=ignore_errors)\n\n        # TODO: use chunks to save on memory\n        tabular: Dict[str, List[Any]] = {}\n        for column in columns:\n            for index, rel_path in enumerate(sorted(file_dict.keys())):\n\n                if column == \"content\":\n                    _value: Any = file_dict[rel_path]\n                elif column == \"id\":\n                    _value = index\n                elif column == \"rel_path\":\n                    _value = rel_path\n                else:\n                    file_model = bundle.included_files[rel_path]\n                    _value = getattr(file_model, column)\n\n                tabular.setdefault(column, []).append(_value)\n\n        table = pa.Table.from_pydict(tabular)\n        return KiaraTable.create_table(table)\n"
       },
       "create.tables": {
         "type_name": "create.tables",
@@ -1285,9 +1237,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1336,7 +1286,7 @@
             },
             "include_source_metadata": {
               "description": "Whether to include a table with metadata about the source files.",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'type': 'boolean'}, {'type': 'null'}]",
               "value_default": null,
               "required": false
             },
@@ -1375,9 +1325,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1408,7 +1356,7 @@
             },
             "query": {
               "description": "The query.",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'type': 'string'}, {'type': 'null'}]",
               "value_default": null,
               "required": false
             }
@@ -1441,9 +1389,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1474,7 +1420,7 @@
             },
             "column_name": {
               "description": "A hardcoded column name to cut.",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'type': 'string'}, {'type': 'null'}]",
               "value_default": null,
               "required": false
             }
@@ -1507,9 +1453,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1579,9 +1523,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1612,13 +1554,13 @@
             },
             "query": {
               "description": "The query to execute. If not specified, the user will be able to provide their own.",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'type': 'string'}, {'type': 'null'}]",
               "value_default": null,
               "required": false
             },
             "relation_name": {
               "description": "The name the table is referred to in the sql query. If not specified, the user will be able to provide their own.",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'type': 'string'}, {'type': 'null'}]",
               "value_default": "data",
               "required": false
             }
@@ -1651,9 +1593,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1684,13 +1624,13 @@
             },
             "number_of_tables": {
               "description": "How many tables should be merged. If 'table_names' is empty, this defaults to '2', otherwise the length of the 'table_names' input.",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'type': 'integer'}, {'type': 'null'}]",
               "value_default": null,
               "required": false
             },
             "table_names": {
               "description": "A pre-defined list of table names. If not defined, users will be asked for the table name(s).",
-              "type": "-- n/a --",
+              "type": "anyOf: [{'items': {'type': 'string'}, 'type': 'array'}, {'type': 'null'}]",
               "value_default": null,
               "required": false
             }
@@ -1729,9 +1669,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1760,9 +1698,7 @@
                   "type": "object"
                 }
               },
-              "required": [
-                "type_name"
-              ],
+              "required": ["type_name"],
               "title": "ColumnSchema",
               "type": "object"
             },
@@ -1780,9 +1716,7 @@
                   "title": "Properties"
                 }
               },
-              "required": [
-                "name"
-              ],
+              "required": ["name"],
               "title": "StorageBackend",
               "type": "object"
             },
@@ -1833,12 +1767,7 @@
                   "title": "Size"
                 }
               },
-              "required": [
-                "column_names",
-                "column_schema",
-                "backend",
-                "rows"
-              ],
+              "required": ["column_names", "column_schema", "backend", "rows"],
               "title": "TableMetadata",
               "type": "object"
             }
@@ -1855,9 +1784,7 @@
               "type": "object"
             }
           },
-          "required": [
-            "tables"
-          ],
+          "required": ["tables"],
           "title": "DatabaseMetadata",
           "type": "object"
         }
@@ -1887,9 +1814,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -1918,9 +1843,7 @@
                   "type": "object"
                 }
               },
-              "required": [
-                "type_name"
-              ],
+              "required": ["type_name"],
               "title": "ColumnSchema",
               "type": "object"
             },
@@ -1938,9 +1861,7 @@
                   "title": "Properties"
                 }
               },
-              "required": [
-                "name"
-              ],
+              "required": ["name"],
               "title": "StorageBackend",
               "type": "object"
             },
@@ -1991,12 +1912,7 @@
                   "title": "Size"
                 }
               },
-              "required": [
-                "column_names",
-                "column_schema",
-                "backend",
-                "rows"
-              ],
+              "required": ["column_names", "column_schema", "backend", "rows"],
               "title": "TableMetadata",
               "type": "object"
             }
@@ -2013,9 +1929,7 @@
               "description": "The table schema."
             }
           },
-          "required": [
-            "table"
-          ],
+          "required": ["table"],
           "title": "KiaraTableMetadata",
           "type": "object"
         }
@@ -2045,9 +1959,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -2076,9 +1988,7 @@
                   "type": "object"
                 }
               },
-              "required": [
-                "type_name"
-              ],
+              "required": ["type_name"],
               "title": "ColumnSchema",
               "type": "object"
             },
@@ -2096,9 +2006,7 @@
                   "title": "Properties"
                 }
               },
-              "required": [
-                "name"
-              ],
+              "required": ["name"],
               "title": "StorageBackend",
               "type": "object"
             },
@@ -2149,12 +2057,7 @@
                   "title": "Size"
                 }
               },
-              "required": [
-                "column_names",
-                "column_schema",
-                "backend",
-                "rows"
-              ],
+              "required": ["column_names", "column_schema", "backend", "rows"],
               "title": "TableMetadata",
               "type": "object"
             }
@@ -2171,9 +2074,7 @@
               "type": "object"
             }
           },
-          "required": [
-            "tables"
-          ],
+          "required": ["tables"],
           "title": "KiaraTablesMetadata",
           "type": "object"
         }
@@ -2203,9 +2104,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -2234,9 +2133,7 @@
                   "type": "object"
                 }
               },
-              "required": [
-                "type_name"
-              ],
+              "required": ["type_name"],
               "title": "ColumnSchema",
               "type": "object"
             },
@@ -2254,9 +2151,7 @@
                   "title": "Properties"
                 }
               },
-              "required": [
-                "name"
-              ],
+              "required": ["name"],
               "title": "StorageBackend",
               "type": "object"
             }
@@ -2307,12 +2202,7 @@
               "title": "Size"
             }
           },
-          "required": [
-            "column_names",
-            "column_schema",
-            "backend",
-            "rows"
-          ],
+          "required": ["column_names", "column_schema", "backend", "rows"],
           "title": "TableMetadata",
           "type": "object"
         }
@@ -2342,9 +2232,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -2401,9 +2289,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -2423,9 +2309,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "db_file_path"
-          ],
+          "required": ["db_file_path"],
           "title": "KiaraDatabase",
           "type": "object"
         }
@@ -2455,9 +2339,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -2514,9 +2396,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -2562,9 +2442,7 @@
               "type": "object"
             }
           },
-          "required": [
-            "tables"
-          ],
+          "required": ["tables"],
           "title": "KiaraTables",
           "type": "object"
         }
@@ -2605,9 +2483,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -2697,9 +2573,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "custom_module"
-        ],
+        "operation_types": ["custom_module"],
         "input_fields": {
           "table_name_1": {
             "field_name": "table_name_1",
@@ -2874,9 +2748,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -2951,9 +2823,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "create_from"
-        ],
+        "operation_types": ["create_from"],
         "input_fields": {
           "file": {
             "field_name": "file",
@@ -3070,9 +2940,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -3136,9 +3004,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "create_from"
-        ],
+        "operation_types": ["create_from"],
         "input_fields": {
           "file_bundle": {
             "field_name": "file_bundle",
@@ -3227,9 +3093,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -3304,9 +3168,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "create_from"
-        ],
+        "operation_types": ["create_from"],
         "input_fields": {
           "table": {
             "field_name": "table",
@@ -3423,9 +3285,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -3489,9 +3349,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "create_from"
-        ],
+        "operation_types": ["create_from"],
         "input_fields": {
           "tables": {
             "field_name": "tables",
@@ -3578,9 +3436,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -3652,9 +3508,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "create_from"
-        ],
+        "operation_types": ["create_from"],
         "input_fields": {
           "file": {
             "field_name": "file",
@@ -3771,9 +3625,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -3834,9 +3686,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "create_from"
-        ],
+        "operation_types": ["create_from"],
         "input_fields": {
           "file_bundle": {
             "field_name": "file_bundle",
@@ -3925,9 +3775,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -3990,9 +3838,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "create_from"
-        ],
+        "operation_types": ["create_from"],
         "input_fields": {
           "file_bundle": {
             "field_name": "file_bundle",
@@ -4081,9 +3927,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -4156,9 +4000,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "deserialize"
-        ],
+        "operation_types": ["deserialize"],
         "input_fields": {
           "array": {
             "field_name": "array",
@@ -4273,9 +4115,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -4348,9 +4188,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "deserialize"
-        ],
+        "operation_types": ["deserialize"],
         "input_fields": {
           "database": {
             "field_name": "database",
@@ -4465,9 +4303,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -4540,9 +4376,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "deserialize"
-        ],
+        "operation_types": ["deserialize"],
         "input_fields": {
           "table": {
             "field_name": "table",
@@ -4657,9 +4491,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -4732,9 +4564,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "deserialize"
-        ],
+        "operation_types": ["deserialize"],
         "input_fields": {
           "tables": {
             "field_name": "tables",
@@ -4849,9 +4679,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -4944,9 +4772,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "export_as"
-        ],
+        "operation_types": ["export_as"],
         "input_fields": {
           "database": {
             "field_name": "database",
@@ -5121,9 +4947,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -5216,9 +5040,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "export_as"
-        ],
+        "operation_types": ["export_as"],
         "input_fields": {
           "database": {
             "field_name": "database",
@@ -5393,9 +5215,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -5488,9 +5308,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "export_as"
-        ],
+        "operation_types": ["export_as"],
         "input_fields": {
           "database": {
             "field_name": "database",
@@ -5665,9 +5483,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -5760,9 +5576,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "export_as"
-        ],
+        "operation_types": ["export_as"],
         "input_fields": {
           "table": {
             "field_name": "table",
@@ -5937,9 +5751,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -6032,9 +5844,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "export_as"
-        ],
+        "operation_types": ["export_as"],
         "input_fields": {
           "tables": {
             "field_name": "tables",
@@ -6209,9 +6019,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -6304,9 +6112,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "export_as"
-        ],
+        "operation_types": ["export_as"],
         "input_fields": {
           "tables": {
             "field_name": "tables",
@@ -6481,9 +6287,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -6576,9 +6380,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "export_as"
-        ],
+        "operation_types": ["export_as"],
         "input_fields": {
           "tables": {
             "field_name": "tables",
@@ -7256,17 +7058,13 @@
                 "url": "https://DHARPA-Project.github.io/kiara_plugin.tabular/"
               }
             },
-            "tags": [
-              "tabular"
-            ],
+            "tags": ["tabular"],
             "labels": {
               "package": "kiara_plugin.tabular"
             }
           }
         },
-        "operation_types": [
-          "pipeline"
-        ],
+        "operation_types": ["pipeline"],
         "input_fields": {
           "table": {
             "field_name": "table",
@@ -7633,7 +7431,7 @@
                   }
                 },
                 "doc": {
-                  "description": "-- n/a --",
+                  "description": "Creates a 'database' instance from a source value of type 'file'.",
                   "doc": null
                 }
               }
@@ -7796,7 +7594,7 @@
                     }
                   },
                   "doc": {
-                    "description": "-- n/a --",
+                    "description": "Creates a 'database' instance from a source value of type 'file'.",
                     "doc": null
                   }
                 }
@@ -7881,17 +7679,13 @@
                 "url": "https://DHARPA-Project.github.io/kiara_plugin.tabular/"
               }
             },
-            "tags": [
-              "tabular"
-            ],
+            "tags": ["tabular"],
             "labels": {
               "package": "kiara_plugin.tabular"
             }
           }
         },
-        "operation_types": [
-          "pipeline"
-        ],
+        "operation_types": ["pipeline"],
         "input_fields": {
           "path": {
             "field_name": "path",
@@ -8173,7 +7967,7 @@
                   }
                 },
                 "doc": {
-                  "description": "Create a table from supported source input types.",
+                  "description": "Creates a 'table' instance from a source value of type 'file'.",
                   "doc": null
                 }
               }
@@ -8334,7 +8128,7 @@
                     }
                   },
                   "doc": {
-                    "description": "Create a table from supported source input types.",
+                    "description": "Creates a 'table' instance from a source value of type 'file'.",
                     "doc": null
                   }
                 }
@@ -8420,17 +8214,13 @@
                 "url": "https://DHARPA-Project.github.io/kiara_plugin.tabular/"
               }
             },
-            "tags": [
-              "tabular"
-            ],
+            "tags": ["tabular"],
             "labels": {
               "package": "kiara_plugin.tabular"
             }
           }
         },
-        "operation_types": [
-          "pipeline"
-        ],
+        "operation_types": ["pipeline"],
         "input_fields": {
           "path": {
             "field_name": "path",
@@ -8703,7 +8493,7 @@
                   }
                 },
                 "doc": {
-                  "description": "Create a table from supported source input types.",
+                  "description": "Creates a 'table' instance from a source value of type 'file_bundle'.",
                   "doc": null
                 }
               }
@@ -8854,7 +8644,7 @@
                     }
                   },
                   "doc": {
-                    "description": "Create a table from supported source input types.",
+                    "description": "Creates a 'table' instance from a source value of type 'file_bundle'.",
                     "doc": null
                   }
                 }
@@ -8928,17 +8718,13 @@
                 "url": "https://DHARPA-Project.github.io/kiara_plugin.tabular/"
               }
             },
-            "tags": [
-              "tabular"
-            ],
+            "tags": ["tabular"],
             "labels": {
               "package": "kiara_plugin.tabular"
             }
           }
         },
-        "operation_types": [
-          "pipeline"
-        ],
+        "operation_types": ["pipeline"],
         "input_fields": {
           "path": {
             "field_name": "path",
@@ -9057,9 +8843,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -9164,9 +8948,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "custom_module"
-        ],
+        "operation_types": ["custom_module"],
         "input_fields": {
           "array": {
             "field_name": "array",
@@ -9365,9 +9147,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -9434,9 +9214,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "custom_module"
-        ],
+        "operation_types": ["custom_module"],
         "input_fields": {
           "database": {
             "field_name": "database",
@@ -9553,9 +9331,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -9634,9 +9410,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "custom_module"
-        ],
+        "operation_types": ["custom_module"],
         "input_fields": {
           "table": {
             "field_name": "table",
@@ -9783,9 +9557,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -9856,9 +9628,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "render_value"
-        ],
+        "operation_types": ["render_value"],
         "input_fields": {
           "value": {
             "field_name": "value",
@@ -9973,9 +9743,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -10046,9 +9814,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "render_value"
-        ],
+        "operation_types": ["render_value"],
         "input_fields": {
           "value": {
             "field_name": "value",
@@ -10163,9 +9929,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -10236,9 +10000,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "render_value"
-        ],
+        "operation_types": ["render_value"],
         "input_fields": {
           "value": {
             "field_name": "value",
@@ -10353,9 +10115,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -10426,9 +10186,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "render_value"
-        ],
+        "operation_types": ["render_value"],
         "input_fields": {
           "value": {
             "field_name": "value",
@@ -10543,9 +10301,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -10612,9 +10368,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "custom_module"
-        ],
+        "operation_types": ["custom_module"],
         "input_fields": {
           "table": {
             "field_name": "table",
@@ -10731,9 +10485,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -10813,9 +10565,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "filter"
-        ],
+        "operation_types": ["filter"],
         "input_fields": {
           "value": {
             "field_name": "value",
@@ -10958,9 +10708,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -11040,9 +10788,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "filter"
-        ],
+        "operation_types": ["filter"],
         "input_fields": {
           "value": {
             "field_name": "value",
@@ -11185,9 +10931,7 @@
               "desc": "The url for the module package documentation."
             }
           },
-          "tags": [
-            "tabular"
-          ],
+          "tags": ["tabular"],
           "labels": {
             "package": "kiara_plugin.tabular"
           }
@@ -11267,9 +11011,7 @@
           },
           "metadata": {}
         },
-        "operation_types": [
-          "filter"
-        ],
+        "operation_types": ["filter"],
         "input_fields": {
           "value": {
             "field_name": "value",

@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  return (await getCollection("plugins")).map((plugin) => {
+    const [name, identifier] = plugin.id.split("/");
+    const [_, version] = identifier.split("-");
+    return { params: { plugin: name, version: version } };
+  });
+}
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { Doc, Authors } from "@dharpa/kiara-svelte-components";
+import { getDataEntryById } from "astro:content";
+const { plugin, version } = Astro.params;
+const data = (
+  await getDataEntryById(
+    "plugins",
+    // @ts-expect-error the build will fail if this string is not one of the files in the `plugins` content collection
+    `${plugin}/kiara_plugin.${plugin}-${version}`,
+  )
+).data;
+---
+
+<StarlightPage frontmatter={{ title: `Kiara plugin ${plugin} - ${version}` }}>
+  <Doc doc={data.documentation} />
+  <Authors authors={data.authors.authors} />
+</StarlightPage>

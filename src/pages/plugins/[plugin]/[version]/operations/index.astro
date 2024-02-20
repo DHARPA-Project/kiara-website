@@ -1,0 +1,61 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import SummariseItemsOfType from "@components/SummariseItemsOfType.astro";
+import {
+  getStaticPathsForPluginVersions,
+  getSpecificKiaraType,
+} from "@lib/util";
+
+export async function getStaticPaths() {
+  return await getStaticPathsForPluginVersions();
+}
+
+const { plugin, version } = Astro.params;
+const operations = Object.values(
+  await getSpecificKiaraType(plugin, version, "operations"),
+);
+const internalOps = operations.filter(
+  (o) => o.operation.operation_details.is_internal_operation,
+);
+const externalOps = operations.filter(
+  (o) => !o.operation.operation_details.is_internal_operation,
+);
+const headings = [
+  { depth: 2, text: "Public operations", slug: "public-operations" },
+  ...externalOps.map((o) => {
+    return { depth: 3, text: o.type_name, slug: o.type_name };
+  }),
+  { depth: 2, text: "Internal operations", slug: "internal-operations" },
+  ...internalOps.map((o) => {
+    return { depth: 3, text: o.type_name, slug: o.type_name };
+  }),
+];
+---
+
+<StarlightPage
+  frontmatter={{ title: `Operations in plugin ${plugin} ${version}` }}
+  headings={headings}
+>
+  <h2 id="public-operations">Public operations</h2>
+  <SummariseItemsOfType
+    allData={externalOps}
+    {plugin}
+    {version}
+    pathName="operations"
+    description="operations"
+  />
+
+  <h2 id="internal-operations">Internal operations</h2>
+  <SummariseItemsOfType
+    allData={internalOps}
+    {plugin}
+    {version}
+    pathName="operations"
+    description="operations"
+  />
+</StarlightPage>
+<style>
+  h3 {
+    margin-top: 1em !important;
+  }
+</style>

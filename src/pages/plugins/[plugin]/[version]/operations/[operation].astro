@@ -1,0 +1,63 @@
+---
+import ConcreteModuleConfig from "@components/ConcreteModuleConfig.svelte";
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import {
+  Doc,
+  InputsOutputs,
+  ItemMetadata,
+} from "@dharpa/kiara-svelte-components";
+import {
+  getStaticPathsForDatatype,
+  getSpecificKiaraTypeInstance,
+} from "@lib/util";
+
+export async function getStaticPaths() {
+  return await getStaticPathsForDatatype("operations", "operation");
+}
+
+const { plugin, version, operation } = Astro.params;
+const data = await getSpecificKiaraTypeInstance(
+  plugin,
+  version,
+  "operations",
+  operation,
+);
+---
+
+<StarlightPage
+  frontmatter={{
+    title: `Operation ${data.type_name} in plugin ${plugin} ${version}`,
+  }}
+  ,
+  headings={[
+    { depth: 2, text: "Inputs", slug: "inputs" },
+    { depth: 2, text: "Outputs", slug: "outputs" },
+    { depth: 2, text: "Module configuration", slug: "module-config" },
+  ]}
+>
+  <Doc doc={data.documentation} />
+  <ItemMetadata item={data} />
+
+  <h2 id="inputs">Inputs</h2>
+  <InputsOutputs fields={data.input_fields} />
+  <h2 id="outputs">Outputs</h2>
+  <InputsOutputs fields={data.output_fields} />
+  <h2 id="module-config">Module configuration</h2>
+
+  <p>
+    Module <a
+      href={`/plugins/${plugin}/${version}/modules/${data.operation.module_type}`}
+      data-pagefind-filter="Module">{data.operation.module_type}</a
+    >
+  </p>
+  {
+    Object.keys(data.operation.module_config).length == 0 ? (
+      <p>No configuration options set</p>
+    ) : (
+      <>
+        <p>With configuration options:</p>
+        <ConcreteModuleConfig config={data.operation.module_config} />
+      </>
+    )
+  }
+</StarlightPage>
