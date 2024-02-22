@@ -82,7 +82,11 @@ I understand this whole process is a bit complicated (sorry!). Feel free to ask 
 
 This site should only include docs for plugins that we think are stable and good quality. If that isn't the case, your plugin should be able to make a standalone version of its own docs to use until it's considered stable enough to include here.
 
-I'll use `kiara_plugin.core_types` as an example here, replace with the name of your plugin as appropriate. This process is a bit manual at the moment, but hopefully shouldn't be super common. If this changes, or I have spare time, I'll automate it. 
+:::note
+All the content displayed in the auto-generated plugin docs sections comes directly from the Python source code for the plugins themselves. So if the content needs improvement, you'll need to do that in the Python code for the plugin. Then, release a new version of the plugin and add that version to these docs as outlined here.
+:::
+
+I'll use `kiara_plugin.core_types` as an example here, replace that with the name of your plugin as appropriate. This process is a bit manual at the moment, but hopefully shouldn't be super common. If this changes, or I have spare time, I'll automate it. 
 
 At a high level, the key thing that needs to happen is a JSON file with a specific filename and in a specific format needs to end up in a specific place in this repository, then the docs platform should take care of everything else. The filename needs to be in the precise format `kiara_plugin.PLUGIN_NAME-vX.Y.Z.json`, where `PLUGIN_NAME` is something like `core_types` or `tabular`, and `X.Y.Z` is the version number, and it needs to be in the `src/content/plugins/PLUGIN_NAME` directory.
 
