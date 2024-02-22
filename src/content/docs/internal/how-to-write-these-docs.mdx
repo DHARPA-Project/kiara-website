@@ -87,6 +87,23 @@ Generate this file with a command something like `kiara info plugin explain kiar
 
 Move the file you generated to the required place, either in a cloned copy of this site then git commit and push, or by uploading directly to GitHub, making extra sure the filename and location is correct (there's no reliable automated checks for this yet, it will probably just silently fail). 
 
+## When things go wrong
+
+Sometimes things go wrong, this is completely fine. You can't publish a broken site - there's a "build step" between you pushing code to GitHub on the `main` branch and the changes going live which prevents broken code making it onto the live site. If you notice that changes you just made aren't showing up in the live site after a minute or two, this might be the problem. You can see whether your build was successful by looking for a green checkmark ✅ or red x ❌ in GitHub, usually next to a commit ID or a summary of the last thing you did. If you click on that icon, GitHub will tell you more about what happened.
+
+If you get a red x, there's a few common things that might have gone wrong. Most likely, you forgot to add the frontmatter to a new page. If you know how to [run the site locally](#running-this-site-on-your-own-computer), you can check this by going to the page(s) you changed in your browser while running the dev server. When you go to that page, the browser and your terminal where the dev server is running will tell you something like this:
+
+```shellsession wrap=true
+[ERROR] [InvalidContentEntryFrontmatterError] 
+docs → internal/how-to-write-these-docs.mdx   # the path of the file where the frontmatter is wrong
+frontmatter does not match collection schema.
+title: Required  # what key in the frontmatter you got wrong
+```
+
+Grab the [frontmatter example code from above](#i-want-to-add-a-new-complicated-page) and add that to your page, checking there's no blank lines or spaces before the first `---`.
+
+If this doesn't fix things, ping Caro (`@caro401` on GitHub). For the moment (because of how and where the site is currently deployed), you can't get any better diagnostics than "something failed", but this should be improved in the future. 
+
 ## Running this site on your own computer
 
 You only need to care about this if you particularly want to make a lot of changes to a lot of docs all at once (and only then to save you a bit of time), or preview how complicated pages are going to look. Don't worry about this section at all if that's not something you need to do. 
@@ -159,22 +176,4 @@ There's also the `src/content/plugins` collection, which is where the autogenera
 
 `astro.config.mjs` contains the configuration for the sidebar, in case you need to tweak that (but prefer to do it at a page level via [frontmatter](https://starlight.astro.build/reference/frontmatter/#sidebar) if you can). 
 
-
-
-## When things go wrong
-
-Sometimes things go wrong, this is completely fine. You can't publish a broken site - there's a "build step" between you pushing code to GitHub on the `main` branch and the changes going live which prevents broken code making it onto the live site. If you notice that changes you just made aren't showing up in the live site after a minute or two, this might be the problem. You can see whether your build was successful by looking for a green checkmark ✅ or red x ❌ in GitHub, usually next to a commit ID or a summary of the last thing you did. If you click on that icon, GitHub will tell you more about what happened.
-
-If you get a red x, there's a few common things that might have gone wrong. Most likely, you forgot to add the frontmatter to a new page. If you know how to [run the site locally](#running-this-site-on-your-own-computer), you can check this by going to the page(s) you changed in your browser while running the dev server. When you go to that page, the browser and your terminal where the dev server is running will tell you something like this:
-
-```shellsession wrap=true
-[ERROR] [InvalidContentEntryFrontmatterError] 
-docs → internal/how-to-write-these-docs.mdx   # the path of the file where the frontmatter is wrong
-frontmatter does not match collection schema.
-title: Required  # what key in the frontmatter you got wrong
-```
-
-Grab the [frontmatter example code from above](#i-want-to-add-a-new-complicated-page) and add that to your page, checking there's no blank lines or spaces before the first `---`.
-
-If this doesn't fix things, ping Caro (`@caro401` on GitHub). For the moment (because of how and where the site is currently deployed), you can't get any better diagnostics than "something failed", but this should be improved in the future. 
 
