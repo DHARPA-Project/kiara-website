@@ -53,6 +53,10 @@ export default defineConfig({
     starlight({
       title: "kiara",
       customCss: ["./src/styles/custom.css"],
+      components: {
+        // override the default title component, to add in last modified time
+        PageTitle: './src/components/Title.astro',
+      },
       social: {
         github: "https://github.com/DHARPA-project/kiara-website",
       },

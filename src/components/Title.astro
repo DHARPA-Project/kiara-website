@@ -1,0 +1,37 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import { execSync } from "child_process";
+
+const { entry } = Astro.props;
+
+const isGenerated = Astro.props.slug.startsWith("plugins");
+let lastModified;
+
+if (!isGenerated) {
+  const filepath = `src/content/docs/${entry.id}`;
+  const result = execSync(`git log -1 --pretty="format:%cI" "${filepath}"`);
+  lastModified = result.toString();
+  dayjs.extend(utc);
+  lastModified = dayjs(lastModified).utc().format("YYYY-MM-DD");
+}
+
+---
+
+<h1 id="_top">{entry.data.title}</h1>
+{lastModified && <span>Last updated: {lastModified}</span>}
+
+<style>
+  span {
+    font-size: var(--sl-text-xs);
+  }
+
+  h1 {
+    margin-top: 1rem;
+    font-size: var(--sl-text-h1);
+    line-height: var(--sl-line-height-headings);
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+</style>
