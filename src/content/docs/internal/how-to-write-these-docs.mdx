@@ -53,7 +53,9 @@ copy button in the top right corner of this code box.
 
 You can add all sorts of things to the frontmatter (see [Starlight's docs on what's allowed](https://starlight.astro.build/reference/frontmatter/)), but the `title` is required.
 
-You'll need to write your content using markdown syntax directly - [here's a quick primer on how to do that](https://www.markdownguide.org/cheat-sheet/). Starlight also provides a couple extra neat things that might be useful (if you're in a `.md` or `.mdx` file, not a `.mdoc` one yet). One is  [asides](https://starlight.astro.build/guides/authoring-content/#asides) for things you want to draw extra attention to:
+You'll need to write your content using markdown syntax directly - [here's a quick primer on how to do that](https://www.markdownguide.org/cheat-sheet/). 
+
+Starlight also provides a couple extra neat things that might be useful (if you're in a `.md` or `.mdx` file, not a `.mdoc` one yet). One is  [asides](https://starlight.astro.build/guides/authoring-content/#asides) for things you want to draw extra attention to:
 
 :::tip
 You can see examples of the aside and codeblock syntax in the source document for this page
@@ -61,7 +63,7 @@ You can see examples of the aside and codeblock syntax in the source document fo
 
 The other is [extra fancy things with code blocks](https://starlight.astro.build/guides/authoring-content/#expressive-code-features) using the [Expressive Code](https://expressive-code.com/) library. This can be really powerful for highlighting particular lines or diffs in your code samples, making it clear whether you're showing code to write in a file or run in a terminal. Read their docs or ask for help on how to do this. 
 
-When you're done making changes, check that the site will (probably) build with 
+When you're done making changes, check that the site will build by running the following in your terminal:
 ```bash title="Tidy up and build the site"
 # optionally run the formatter to tidy up your code
 npm run format
@@ -69,7 +71,7 @@ npm run format
 npm run build
 ```
 
-This will probably give you a lot of output that you don't care about (because there's a lot of pages!), just check that the final like of output says `Complete!` rather than an error message or stack trace. See [when things go wrong](#when-things-go-wrong) for ideas about how to fix errors if there are any.
+This will probably give you a lot of output that you don't care about (because there's a lot of pages!), just check that the final line of output says `Complete!` rather than an error message or stack trace. See [when things go wrong](#when-things-go-wrong) for ideas about how to fix errors if there are any.
 
 Once you're happy, make a git commit (probably to a new branch), push it and open a pull request to get reviews on what you've written. 
 
@@ -113,7 +115,7 @@ If this doesn't fix things, ping Caro (`@caro401` on GitHub). For the moment (be
 
 ## Running this site on your own computer
 
-You only need to care about this if you particularly want to make a lot of changes to a lot of docs all at once (and only then to save you a bit of time), or preview how complicated pages are going to look. Don't worry about this section at all if that's not something you need to do. 
+You only need to care about this if you particularly want to make a lot of changes to a lot of docs all at once (and only then to save you a bit of time), or preview how structurally complex pages are going to look. Don't worry about this section at all if that's not something you need to do. 
 
 I'm assuming that you know the basics of how to use `git` to clone a repository, make a branch, commit and pull request, can run commands in your terminal, and can follow installation instructions for your own operating system for common tools.
 
