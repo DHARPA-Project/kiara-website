@@ -53,7 +53,7 @@ export default defineConfig({
     starlight({
       title: "kiara",
       editLink: {
-        baseUrl: 'https://github.com/DHARPA-project/kiara-website/edit/main/',
+        baseUrl: "https://github.com/DHARPA-project/kiara-website/edit/main/",
       },
       customCss: ["./src/styles/custom.css"],
       social: {
