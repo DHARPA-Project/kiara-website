@@ -44,7 +44,7 @@ title: Title for your new page
 
 Whatever you actually want to write goes here below the ---. 
 You can copy this code snippet straight into your new page with the 
-copy button in the top right corner.
+copy button in the top right corner of this code box.
 ```
 
 You can add all sorts of things to the frontmatter (see [Starlight's docs on what's allowed](https://starlight.astro.build/reference/frontmatter/)), but the `title` is required.
@@ -55,7 +55,7 @@ You'll need to write your content using markdown syntax directly - [here's a qui
 Here's an example of an aside. They might be useful for warning people about particular tricky things or common mistakes
 :::
 
-The other is [extra fancy things with code blocks](https://starlight.astro.build/guides/authoring-content/#expressive-code-features) using the [Expressive Code](https://expressive-code.com/) library. This can be really powerful for highligting particular lines or diffs in your code samples, making it clear whether you're showing code to write in a file or run in a terminal. Read their docs or ask for help on how to do this. 
+The other is [extra fancy things with code blocks](https://starlight.astro.build/guides/authoring-content/#expressive-code-features) using the [Expressive Code](https://expressive-code.com/) library. This can be really powerful for highlighting particular lines or diffs in your code samples, making it clear whether you're showing code to write in a file or run in a terminal. Read their docs or ask for help on how to do this. 
 
 When you're done making changes, check that the site will (probably) build with 
 ```bash title="Tidy up and build the site"
@@ -65,10 +65,10 @@ npm run format
 npm run build
 ```
 
-This will probably give you a lot of output that you don't care about (because there's a lot of pages!), just check that the final like of output says `Complete!` rather than an error message or stack trace. See [when things go wrong](#when-things-go-wrong) for ideas about how to fix error if there are any.
+This will probably give you a lot of output that you don't care about (because there's a lot of pages!), just check that the final like of output says `Complete!` rather than an error message or stack trace. See [when things go wrong](#when-things-go-wrong) for ideas about how to fix errors if there are any.
 
 
-Once you're happy, make a git commit (probably to a new branch), push it and open a pull request to get review on what you've written. 
+Once you're happy, make a git commit (probably to a new branch), push it and open a pull request to get reviews on what you've written. 
 
 :::note
 I understand this whole process is a bit complicated (sorry!). Feel free to ask me for help at any point with anything, or to suggest improvements to these docs about how to use the platform, or to the platform itself.
@@ -176,5 +176,5 @@ title: Required  # what key in the frontmatter you got wrong
 
 Grab the [frontmatter example code from above](#i-want-to-add-a-new-complicated-page) and add that to your page, checking there's no blank lines or spaces before the first `---`.
 
-If this doesn't fix things, ping Caro (`@caro401` on GitHub). For the moment (because of how and where the site is currently deployed), you can't get any better diagonstics than "something failed", but this should be improved in the future. 
+If this doesn't fix things, ping Caro (`@caro401` on GitHub). For the moment (because of how and where the site is currently deployed), you can't get any better diagnostics than "something failed", but this should be improved in the future. 
 
