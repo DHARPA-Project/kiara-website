@@ -19,19 +19,17 @@ There's a bunch of different ways you can add or edit content in the docs, depen
 
 Find the page on the website you want to edit, and click the "edit page" link at the bottom. This will take you straight to the right file to edit in GitHub. Make the change, then click the green "Commit changes..." button in the top corner and follow the prompts. If the change is super tiny, commit straight to the `main` branch. Wait for a minute or two (and check that the [build succeeds](#when-things-go-wrong)) and your change should be live on the site.
 
-### I want to make bigger edits to text
+### I want to write or edit some prose
 
-If you can, draft the changes you want to write in a Google doc or some other text editor first. 
+Also use these steps if you want to add a new page with mostly words. This will go smoother if you've already drafted the changes you want to write in a Google doc or some other text editor first. The advantage of using this process via the CMS rather than editing in GitHub is being able to use the CMS's rich text editor (more like word or google docs) rather than having to write markdown by hand.  
 
 Go to [the CMS](https://kiara-website.pages.dev/keystatic) (if you have access) and find the appopriate collection for your page. This loosely matches up with the main sidebar sections, and with our target user personas. Find the page you want to work on by its "slug" - probably the same as the title but with `-` not spaces. Paste in or make your edits in the big text box for that page, then hit the blue "Save" button in the top corner. 
 
 Hitting "save" makes a commit in GitHub, which triggers a site rebuild each time you do it, so ideally only save when you have a meaningful chunk of work completed. Your browser will remember what you were working on if you accidentally navigate away, you don't have to save after every sentence.
 
-Also use this process if you want to add a new page, when you've already drafted the content elsewhere and it's mostly text.
+### I want to add a new, strucutrally complex page 
 
-### I want to add a new, complicated page 
-
-For these purposes, a complicated page is one with a lot of code samples, requiring special components or extra markdown things that the CMS doesn't support well. I'm assuming that you know the basics of how to use `git` to clone a repository, make a branch, commit and pull request, can run commands in your terminal, and can (work out how to) write markdown syntax in your text editor of choice. For some basic information on git commits and pull requests, check out this guide [here] (https://www.dummies.com/article/technology/programming-web-design/general-programming-web-design/what-are-github-pull-requests-264741/).
+For these purposes, a strucutrally complex page is one with a lot of code samples, requiring special components or extra markdown things that the CMS doesn't support well. I'm assuming that you know the basics of how to use `git` to clone a repository, make a branch, commit and pull request, can run commands in your terminal, and can (work out how to) write markdown syntax in your text editor of choice. For some basic information on git commits and pull requests, [check out this guide](https://www.dummies.com/article/technology/programming-web-design/general-programming-web-design/what-are-github-pull-requests-264741/).
 
 It's much easier to write big chunks of documentation if you can run a copy of the site on your local computer, so you can look at the changes you're making as you're working. [Follow these instructions to get set up](#running-this-site-on-your-own-computer). Then, work out where your file is/should go. You'll want to look in the `/src/content/docs` directory to start with, then find the section that matches with where your doc should go (eg `concepts`). 
 
@@ -52,7 +50,7 @@ You can add all sorts of things to the frontmatter (see [Starlight's docs on wha
 You'll need to write your content using markdown syntax directly - [here's a quick primer on how to do that](https://www.markdownguide.org/cheat-sheet/). Starlight also provides a couple extra neat things that might be useful (if you're in a `.md` or `.mdx` file, not a `.mdoc` one yet). One is  [asides](https://starlight.astro.build/guides/authoring-content/#asides) for things you want to draw extra attention to:
 
 :::tip
-Here's an example of an aside. They might be useful for warning people about particular tricky things or common mistakes
+You can see examples of the aside and codeblock syntax in the source document for this page
 :::
 
 The other is [extra fancy things with code blocks](https://starlight.astro.build/guides/authoring-content/#expressive-code-features) using the [Expressive Code](https://expressive-code.com/) library. This can be really powerful for highlighting particular lines or diffs in your code samples, making it clear whether you're showing code to write in a file or run in a terminal. Read their docs or ask for help on how to do this. 
@@ -66,7 +64,6 @@ npm run build
 ```
 
 This will probably give you a lot of output that you don't care about (because there's a lot of pages!), just check that the final like of output says `Complete!` rather than an error message or stack trace. See [when things go wrong](#when-things-go-wrong) for ideas about how to fix errors if there are any.
-
 
 Once you're happy, make a git commit (probably to a new branch), push it and open a pull request to get reviews on what you've written. 
 
