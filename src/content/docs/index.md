@@ -6,11 +6,11 @@ hero:
   tagline: Docs for kiara and associated plugins
   actions:
     - text: Getting Started
-      link: /module-users/getting-started-network-analysis/
+      link: /kiara-website/module-users/getting-started-network-analysis/
       icon: right-arrow
       variant: primary
     - text: Glossary
-      link: /concepts/terms
+      link: /kiara-website/concepts/terms
       icon: open-book
 ---
 
@@ -44,29 +44,29 @@ Use kiara to solve your problems like
 
 A possible information architecture for a new docs site for kiara could look like this.
 
-- Overview/summary/homepage [draft and ideas](./overview)
+- Overview/summary/homepage draft/ideas
 
-- I'm a [module user](./module-user/index)
+- I'm a [module user](/kiara-website/module-users/)
 
-  - Tutorials/getting started - for [network analysis folks](/users/getting-started-network-analysis) and [NLP folks](/users/getting-started-nlp)
+  - Tutorials/getting started - for [network analysis folks](/kiara-website/module-users/getting-started-network-analysis) and [NLP folks](/kiara-website/module-users/getting-started-nlp)
   - how-to specific things - some ideas in `/users/how-to-<something>.md`
-  - [how to install python](./users/how-to-install-python)
+    - [how to install python](/kiara-website/module-users/how-to-install-python)
 
-- I'm a [plugin author](./module-writers/index)
+- I'm a [plugin author](/kiara-website/module-writers/)
 
-  - Tutorials/getting started [making a plugin](./developer/getting-started-making-plugin) and [making a pipeline](./developer/getting-started-making-pipeline)
+  - Tutorials/getting started [making a plugin](/kiara-website/module-writers/getting-started-making-plugin/) and [making a pipeline](/kiara-website/module-writers/getting-started-making-pipeline/)
   - how-to specific things - some ideas in `/developer/how-to-<something>.md`
   - something about developing on kiara core
 
-- I use kiara via [mini apps](./mini-app-users/index)
-- I [develop kiara itself](./core-devs/index)
+- I use kiara via [mini apps](/kiara-website/mini-app-users/)
+- I [develop kiara itself](/kiara-website/core-devs/)
 - Concepts
 
-  - [Glossary/explanation of terms](./concepts/glossary)
-  - Something about data lineage and [reproducibility](./concepts/reproducible-research)
-  - [overview of kiara architecture](./concepts/architecture)
+  - [Glossary/explanation of terms](/kiara-website/concepts/glossary)
+  - Something about data lineage and [reproducibility](/kiara-website/concepts/reproducible-research)
+  - [overview of kiara architecture](/kiara-website/concepts/architecture)
   - something to explain when kiara might not be a good fit?
-  - [How kiara does versioning](./concepts/versioning)
+  - [How kiara does versioning](/kiara-website/concepts/versioning)
 
 - List of known plugins, summary of what they do, link to/include their content-based docs (see [below](#docs-from-plugins))
 

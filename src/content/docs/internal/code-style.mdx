@@ -1,8 +1,8 @@
 ---
-title:  How we write code in docs
+title: How we write code in docs
 ---
 
-It is useful for us to use consistent style, patterns and names of things in all example code, particularly in end-user facing docs. We decided 
+It is useful for us to use consistent style, patterns and names of things in all example code, particularly in end-user facing docs. We decided
 
 - the import line at the start of all examples should be `from kiara.api import KiaraAPI`, optionally with a comment about what version we're assuming if that is relevant for the example.
 - If any plugins are required, note that where imports would normally go, including versions
@@ -14,7 +14,6 @@ It is useful for us to use consistent style, patterns and names of things in all
   - Show how to extract the most meaningful thing from the results, for example if the operation is import a file, show how to get the file
 - Use comments liberally, although prefer markdown prose if possible. If you're going to break up the code and explain it line-by-line in prose, also provide the full example (if it's fairly short) at the end for ease of copy/paste, and to pull the content together for a final summary.
 - Don't use type hints by default, although you may in documentation targeted at more technical users if it's really meaningful
-
 
 Here's a full example, illustrating most of these things
 

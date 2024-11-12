@@ -6,8 +6,6 @@ The platform for these docs is maintained by Caro Appleby, grab me on GitHub (`@
 
 The platform is based on [Starlight](https://starlight.astro.build/), which itself is based on [Astro](https://astro.build/), which is a fancy static site generator (for our usecase at least). It turns [Markdown](https://daringfireball.net/projects/markdown/basics) or [MDX](https://mdxjs.com/docs/what-is-mdx/#mdx-syntax) or [Markdoc](https://markdoc.dev/docs/syntax) content into HTML, which can then be viewed via a web browser.
 
-There's also a Content Management System (CMS) available for people on the team to use. This is based on [Keystatic](https://keystatic.com/), and can be accessed at [`/keystatic`](https://kiara-website.pages.dev/keystatic) if you have write access to this repository on GitHub.
-
 Everything that ends up in the `main` branch in GitHub will automatically end up in the live site (here!) after a few minutes, unless something goes wrong. Commits to other branches will also get deployed, but to different "preview" URLS.
 
 I'll call this whole system the "docs platform". There's a label `docs-platform` for it in GitHub if you make an issue about the platform or how to use it.
@@ -16,31 +14,19 @@ I'll call this whole system the "docs platform". There's a label `docs-platform`
 
 There's a bunch of different ways you can add or edit content in the docs, depending on how big the changes are you want to make, and how technically comfortable you feel.
 
-### I just want to fix a typo
+### I just want to fix a typo or write some prose
 
 Find the page on the website you want to edit, and click the "edit page" link at the bottom. This will take you straight to the right file to edit in GitHub. Make the change, then click the green "Commit changes..." button in the top corner and follow the prompts. If the change is super tiny, commit straight to the `main` branch. Wait for a minute or two (and check that the [build succeeds](#when-things-go-wrong)) and your change should be live on the site.
 
-### I want to write or edit some prose
-
-Also use these steps if you want to add a new page with mostly words. This will go smoother if you've already drafted the changes you want to write in a Google doc or some other text editor first. The advantage of using this process via the CMS rather than editing in GitHub is being able to use the CMS's rich text editor (more like word or google docs) rather than having to write markdown by hand.
-
-Go to [the CMS](https://kiara-website.pages.dev/keystatic) (if you have access) and sign in with GitHub. If you're planning to make a substantial change, you'll probably want to create or move to a new git branch from the CMS homepage - remember anything committed to `main` goes to the live site immediately without review. The CMS makes commits directly to the branch you have selected when you save. If you need a git refresher to know what that means, [check out this guide](https://www.dummies.com/article/technology/programming-web-design/general-programming-web-design/what-are-github-pull-requests-264741/), or ask Caro for help.
-
-Once you're on the right branch, find the appopriate collection for your page. This loosely matches up with the main sidebar sections, and with our target user personas. Find the page you want to work on by its "slug" - probably the same as the title but with `-` not spaces. Paste in or make your edits in the big text box for that page, then hit the blue "Save" button in the top corner.
-
-Hitting "save" makes a commit in GitHub, which triggers a site rebuild each time you do it, so ideally only save when you have a meaningful chunk of work completed. Your browser will remember what you were working on if you accidentally navigate away, you don't have to save after every sentence.
-
-If you worked on a separate branch, you'll want to go back to GitHub and open a pull request once you're mostly happy with your work. This will get a comment from the `cloudflare-pages` bot with a preview URL, so you can check how your article will look on the live site. Once this is merged into `main`, your new prose will appear on the live site.
-
 ### I want to add or edit structurally complex page
 
-For these purposes, a structurally complex page is one with a lot of code samples, requiring special components or extra markdown features that the CMS doesn't support well. This is probably something like an in-depth tutorial, as opposed to an article explaining a high-level concept using mostly prose.
+For these purposes, a structurally complex page is one with a lot of code samples, requiring special components or extra markdown features that the GitHub doesn't display nicely. This is probably something like an in-depth tutorial, as opposed to an article explaining a high-level concept using mostly prose.
 
 I'm assuming that you know the basics of how to use `git` to clone a repository, make a branch, commit and pull request, can run commands in your terminal, and can (work out how to) write markdown syntax in your text editor of choice. For some basic information on git commits and pull requests, [check out this guide](https://www.dummies.com/article/technology/programming-web-design/general-programming-web-design/what-are-github-pull-requests-264741/).
 
 It's much easier to write big chunks of documentation if you can run a copy of the site on your local computer, so you can look at the changes you're making as you're working. [Follow these instructions to get set up](#running-this-site-on-your-own-computer). Then, work out where your file is/should go. You'll want to look in the `/src/content/docs` directory to start with, then find the section that matches with where your doc should go (eg `concepts`).
 
-Create a new file where you want your new doc to appear. If you want to be able to edit it in the CMS in the future, use Markdoc format (`.mdoc`), otherwise use MDX format for maximum flexibility (`.mdx`). The first thing you'll need to do in a new file is add the required [frontmatter](https://starlight.astro.build/guides/authoring-content/#frontmatter). This means adding a special section at the start of your file, which looks like:
+Create a new file where you want your new doc to appear. Use MDX format for maximum flexibility (`.mdx`). The first thing you'll need to do in a new file is add the required [frontmatter](https://starlight.astro.build/guides/authoring-content/#frontmatter). This means adding a special section at the start of your file, which looks like:
 
 ```md
 ---
@@ -110,7 +96,7 @@ frontmatter does not match collection schema.
 title: Required  # what key in the frontmatter you got wrong
 ```
 
-Grab the [frontmatter example code from above](#i-want-to-add-a-new-complicated-page) and add that to your page, checking there's no blank lines or spaces before the first `---`.
+Grab the [frontmatter example code from above](#i-want-to-add-or-edit-structurally-complex-page) and add that to your page, checking there's no blank lines or spaces before the first `---`.
 
 If this doesn't fix things, ping Caro (`@caro401` on GitHub). For the moment (because of how and where the site is currently deployed), you can't get any better diagnostics than "something failed", but this should be improved in the future.
 
@@ -150,7 +136,7 @@ And if everything's worked, you should be able to start the "dev server" to view
 npm run dev
 ```
 
-then open the URL it tells you in your browser, probably [http://127.0.0.1:4321](http://127.0.0.1:4321). The dev server will intelligently refresh the pages or content it's serving when you make changes to files in the repository, so you can preview anything you're working on really fast.
+then open the URL it tells you in your browser, probably `http://127.0.0.1:4321`. The dev server will intelligently refresh the pages or content it's serving when you make changes to files in the repository, so you can preview anything you're working on really fast.
 
 Search doesn't work while running the dev server. If you need to experiment with how search works, you'll need to `npm run build`, then serve the `/dist` directory using the server of your choice (I run `npx serve dist`). This doesn't magically refresh itself, so you'll need to rebuild and restart the server each time you make a change.
 
@@ -165,7 +151,7 @@ src
 │   │   ├── ...
 │   │   ├── index.md  ← this is the site homepage
 │   │   ├── ...
-│   │   ├── module-users ← these sections all accessible in the CMS
+│   │   ├── module-users
 │   │   │   ├── <lots of other pages here>
 │   │   │   ├── something.mdoc  ← a specific page
 │   │   │   └── index.mdoc  ← this page will always appear first in that sidebar section

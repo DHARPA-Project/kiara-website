@@ -46,7 +46,7 @@ const data = await getSpecificKiaraTypeInstance(
 
   <p>
     Module <a
-      href={`/plugins/${plugin}/${version}/modules/${data.operation.module_type}`}
+      href={`${import.meta.env.BASE_URL}/plugins/${plugin}/${version}/modules/${data.operation.module_type}`}
       data-pagefind-filter="Module">{data.operation.module_type}</a
     >
   </p>

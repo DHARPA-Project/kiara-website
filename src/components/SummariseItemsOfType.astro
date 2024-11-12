@@ -10,7 +10,7 @@ import { Doc } from "@dharpa/kiara-svelte-components";
         <>
           <li id={d.type_name}>
             <a
-              href={`/plugins/${plugin}/${version}/${pathName}/${d.type_name}`}
+              href={`${import.meta.env.BASE_URL}/plugins/${plugin}/${version}/${pathName}/${d.type_name}`}
             >
               {d.type_name}
             </a>

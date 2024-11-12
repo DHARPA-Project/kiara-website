@@ -1,12 +1,9 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import react from "@astrojs/react";
-import markdoc from "@astrojs/markdoc";
-import keystatic from "@keystatic/astro";
-import cloudflare from "@astrojs/cloudflare";
 import { readdirSync } from "fs";
 import svelte from "@astrojs/svelte";
 import semverSort from "semver-sort";
+import starlightLinksValidator from "starlight-links-validator";
 
 function getOperations() {
   const plugins = readdirSync("src/content/plugins");
@@ -49,8 +46,13 @@ function getOperations() {
 }
 // https://astro.build/config
 export default defineConfig({
+  // https://docs.astro.build/en/guides/deploy/github/#deploying-to-a-githubio-url
+  site: "https://DHARPA-Project.github.io",
+  base: "/kiara-website",
   integrations: [
     starlight({
+      plugins: [starlightLinksValidator()],
+
       title: "kiara",
       editLink: {
         baseUrl: "https://github.com/DHARPA-project/kiara-website/edit/main/",
@@ -58,8 +60,9 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
       components: {
         // override the default title component, to add in last modified time
-        PageTitle: './src/components/Title.astro',
+        PageTitle: "./src/components/Title.astro",
       },
+      expressiveCode: { themes: ["catppuccin-macchiato", "catppuccin-latte"] },
       social: {
         github: "https://github.com/DHARPA-project/kiara-website",
       },
@@ -111,11 +114,7 @@ export default defineConfig({
         },
       ],
     }),
-    react(),
-    markdoc({ allowHTML: true }),
-    keystatic(),
     svelte(),
   ],
-  output: "hybrid",
-  adapter: cloudflare(),
+  output: "static",
 });
