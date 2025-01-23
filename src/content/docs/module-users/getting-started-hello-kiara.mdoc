@@ -1,8 +1,8 @@
 ---
-title: Getting Started - Hello Kiara
+title:  Getting started - Hello kiara
 ---
 
-<h2>Digital History: The Story So Far</h2>
+## Digital History: The Story So Far
 
 As the field of Digital History continues to grow, so too does the number of tools, software, and coding packages built to support and advance digital history in practice. The range of this is at times staggering: from applications suitable for the most novice of digital historians, to coding guides and tools for those working to more nuanced and specific end-goals, researchers have an ability to engage with their materials in digital, quantitative ways on a never before seen level. Often we focus primarily on the new *findings* that come of out this new way of approaching research - but what about the ways we get to those findings?
 
@@ -12,8 +12,8 @@ You've got an outcome - but do you know how you've got from a to b? It's likely 
 
 But how do we keep track?
 
-<h1>Hello <i>kiara</i>.</h1>
-<h3>Introducing <i>kiara</i>, a new data orchestration tool.</h3>
+## Hello <i>kiara</i>.
+> Introducing <i>kiara</i>, a new data orchestration tool.
 
 This new tool incorporates a number of different digital research approaches, but most importantly documents and encourages users to critically reflect on the process and use of DH tools. In doing so, the software opens up the black box of digital research, moving away from button-clicking software and making digital research more transparent and open to commentary, replicability, and criticism. It not only makes the research process itself more open, allowing users to visualise and examine the individual steps from start to finish, but also allows them to track changes to the data itself, something that is either imperceptible or, perhaps more importantly, *forgotten about* in traditional digital history methods and tools. *kiara* therefore acts as a 'wrapper' to this digital research process, tracking and documenting the steps and changes to the data, producing a veritable map of the journey that can be reflected upon and shared. As well as tracing the data and the actions themselves, <i>kiara</i> asks you to record your own decisions each time you run an operation - why are you doing this? What data are you using? What parameters have you chosen and why? Adding comments or notes to each stage of the process not only makes the work clearer for others looking at the research but for your own records as well!
 
@@ -21,7 +21,7 @@ This tutorial will walk you through how to start *kiara* in Jupyter Notebooks, a
 
 This tutorial requires you to know some **python** and **SQL**.
 
-<h2>Running <i>kiara</i></h2>
+## Running <i>kiara</i>
 
 Before running this notebook, you need to install <i>kiara</i> and its dependencies in a virtual environment (such as Conda). Check out the installation instructions <a href = "https://kiara-website.pages.dev/module-users/how-to-install-python/">here</a>. 
 
@@ -36,7 +36,7 @@ from kiara.api import KiaraAPI
 kiara = KiaraAPI.instance()
 ```
 
-<h2>Creating a Project: <i>kiara</i> contexts</h2>
+## Creating a Project: <i>kiara</i> contexts
 
 First up, we want to think about creating a project space, which in <i>kiara</i> are known as **contexts**. Contexts store all of the information on the data we import or create, the jobs we run, and all the processes and decisions we tell <i>kiara</i> about. <i>kiara</i> comes with a 'default' context in place, meaning we can use it straight away, or we can choose to create a new one to use for a specific purpose. Let's create one called 'hello_kiara' for this notebook, by using this as an input for `set_active_context` and setting our create option to <span style='color:aqua'>True</span>. 
 
@@ -130,7 +130,7 @@ kiara.list_operation_ids()
 
 
 
-<h3>Downloading Files</h3>
+## Downloading Files
 
 Great, now we know the different kind of operations we can use with *kiara*. Let's start by introducing some files to our notebook, using the `download.file` function.<br/>
 First we want to find out what this operation does, and just as importantly, what inputs it needs to work.
@@ -354,7 +354,7 @@ kiara.store_value(value=downloaded_file.value_id, alias='Journal_Nodes')
 
 
 
-<h3>New Formats: Creating and Converting</h3>
+## New Formats: Creating and Converting
 
 What next? We could transform the downloaded file contents into a different format. <br/>
 Let's use the operation list earlier, and look for something that allows us to create something out of our new file.
@@ -548,7 +548,7 @@ kiara.store_value(value=outputs_table.value_id, alias="Journal_Nodes_table")
 
 
 
-<h3>Querying our Data</h3>
+## Querying our Data
 
 So now we have downloaded our file and converted it into a table, we want to actually explore it.
 
@@ -721,7 +721,7 @@ outputs
 
 
 
-<h3>Recording and Tracing our Data</h3>
+## Recording and Tracing our Data 
 
 We've quite a few changes to this table, so let's double check the information about this new table we've created with our queries.
 
@@ -4046,7 +4046,7 @@ job_table = pd.DataFrame(kiara.get_all_jobs_info_data())
 job_table.to_csv('job_log.csv', index=False)
 ```
 
-<h2>What next...?</h2>
+## What next...?
 
 That's great, you've completed the first notebook and successfully installed *kiara*, downloaded files, tested out some functions, and are able to see what this does to your data. 
 
